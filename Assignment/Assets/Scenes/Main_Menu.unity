@@ -3591,6 +3591,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioManager: {fileID: 7914317407826035285, guid: 7fdbfd0b44344f64c8db81be6ff95ff0, type: 3}
   _musicManager: {fileID: 7214804595118802145, guid: 55a9da0a697247a43b7e124353903200, type: 3}
+  _inputManager: {fileID: 191145129378472203, guid: 1591a38058fcf42acbb127aa08386a15, type: 3}
   TestEvent:
     m_PersistentCalls:
       m_Calls: []
