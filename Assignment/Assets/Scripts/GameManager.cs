@@ -1,11 +1,14 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     [SerializeField] private AudioManager _audioManager;
     [SerializeField] private MusicManager _musicManager;
+    [SerializeField] private InputManager _inputManager;
+
     private void Awake() //Called on game start
     {
         if (instance == null)
@@ -27,6 +30,7 @@ public class GameManager : MonoBehaviour
     {
         _audioManager = Instantiate(_audioManager);
         _musicManager = Instantiate(_musicManager);
+        _inputManager = Instantiate(_inputManager);
     }
 
     public void StartNewGame() //Called on NewGame UI button click
@@ -39,5 +43,6 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(levelName);
     }
 
+    public UnityEvent TestEvent;
     
 }
