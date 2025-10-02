@@ -8,6 +8,7 @@ public class CollisionDetector : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        OnCollision.Invoke();
         Debug.Log("Hit Player");
     }
 
