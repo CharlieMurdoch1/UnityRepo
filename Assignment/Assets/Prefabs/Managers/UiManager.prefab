@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5397705905275075722
+--- !u!1 &5704102036843221690
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 9108567239748895646}
-  - component: {fileID: 4548436257800451944}
+  - component: {fileID: 5161461728560549393}
+  - component: {fileID: 8348222058477277688}
   m_Layer: 0
-  m_Name: MusicLib
+  m_Name: UiManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &9108567239748895646
+--- !u!4 &5161461728560549393
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5397705905275075722}
+  m_GameObject: {fileID: 5704102036843221690}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1240.6212, y: 806.63007, z: 5.686711}
+  m_LocalPosition: {x: 1174.9563, y: 697.5229, z: 5.48072}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4548436257800451944
+--- !u!114 &8348222058477277688
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5397705905275075722}
+  m_GameObject: {fileID: 5704102036843221690}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c246546f55f5ee2439bf02d5cf7307c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 2bcc1f0d7e02c6544a0a067d7e9b3040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tracks: []
+  _uiCanvas: {fileID: 1262584975907774761, guid: 3d2b655206d34d544a4949128d6f63e4, type: 3}
+  _mainMenu: {fileID: 6544710279530885168, guid: 836118f1e6b29734bbf0b5831c0e28dc, type: 3}
+  _pauseMenu: {fileID: 629533711407016599, guid: 03f982676306dea469fde8fddb039d1d, type: 3}

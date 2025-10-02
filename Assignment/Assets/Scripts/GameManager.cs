@@ -2,13 +2,20 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Events;
 
+public enum GameState { MainMenu, Playing, Paused}
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public GameState CurrentState { get; private set; } = GameState.MainMenu;
+
+    //Manager Prefabs
     [SerializeField] private AudioManager _audioManager;
     [SerializeField] private MusicManager _musicManager;
     [SerializeField] private InputManager _inputManager;
+    [SerializeField] private UiManager _uiManager;
 
+    #region Initialization
     private void Awake() //Called on game start
     {
         if (instance == null)
@@ -19,7 +26,7 @@ public class GameManager : MonoBehaviour
         else
         {
             Destroy(this);
-            Debug.LogError("More than one GameManager instance in the scene");
+            return;
         }
 
         SettingsHandler.LoadPrefs(); //Load Settings data from playerPrefs
@@ -29,20 +36,55 @@ public class GameManager : MonoBehaviour
     private void BindObjects() //Creates instances of managers and binds them
     {
         _audioManager = Instantiate(_audioManager);
-        _musicManager = Instantiate(_musicManager);
+        //_musicManager = Instantiate(_musicManager);
         _inputManager = Instantiate(_inputManager);
+        _uiManager = Instantiate(_uiManager);
     }
 
-    public void StartNewGame() //Called on NewGame UI button click
+    #endregion
+
+    #region State Management
+    private void SetState(GameState state) //Changes game state
+    {
+        if (state == CurrentState) return;
+        CurrentState = state;
+        OnStateChange.Invoke();
+        Debug.Log("Set game state to " + state);
+    }
+
+    public UnityEvent OnStateChange; //Invoked when state changes
+    #endregion
+
+    #region Runtime Functions
+    public void StartNewGame()
     {
         LoadLevel("Level_01");
+        SetState(GameState.Playing);
     }
 
     public void LoadLevel(string levelName)
     {
         SceneManager.LoadScene(levelName);
+        SetState(GameState.Playing);
     }
 
-    public UnityEvent TestEvent;
-    
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene("Main_Menu");
+        SetState(GameState.MainMenu);
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+        SetState(GameState.Paused); 
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+        SetState(GameState.Playing);
+    }
+
+    #endregion
 }

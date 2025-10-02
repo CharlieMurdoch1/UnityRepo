@@ -8,9 +8,10 @@ public class InputManager : MonoBehaviour
     [SerializeField] private InputAction pauseAction;
     [SerializeField] private InputAction interactAction;
 
-    private void Awake() //Set up static instance
+    #region Initialization
+    private void Awake() 
     {
-        if(instance == null)
+        if(instance == null) //Set up static instance
         {
             instance = this;
             DontDestroyOnLoad(this);
@@ -21,27 +22,43 @@ public class InputManager : MonoBehaviour
             Destroy(this);
         }
 
-        EnableActions();
+        GameManager.instance.OnStateChange.AddListener(HandleStateChange); //Add listener for game state changes
     }
+    #endregion
 
-    public void EnableActions() //Enable input actions
+    #region State Management
+    private void HandleStateChange()
+    {
+        if (GameManager.instance.CurrentState == GameState.Playing)
+        {
+            EnableActions();
+        }
+        else
+        {
+            DisableActions();
+        }
+    }
+    private void EnableActions() //Enable input actions
     {
         pauseAction.performed += onPauseAction;
         pauseAction.Enable();
-
         interactAction.performed += onInteractAction;
         interactAction.Enable();
-
     }
 
-    public void DisableActions()
+    private void DisableActions() //Disable input actions
     {
+        pauseAction.performed -= onPauseAction;
         pauseAction.Disable();
+        interactAction.performed -= onInteractAction;
         interactAction.Disable();
     }
+    #endregion
 
+    #region On Action Functions
     private void onPauseAction(InputAction.CallbackContext context)
     {
+        GameManager.instance.PauseGame();
         Debug.Log("PAUSE GAME");
     }
 
@@ -49,4 +66,5 @@ public class InputManager : MonoBehaviour
     {
         Debug.Log("INTERACT");
     }
+    #endregion
 }
