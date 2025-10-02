@@ -47,8 +47,20 @@ public class GameManager : MonoBehaviour
     private void SetState(GameState state) //Changes game state
     {
         if (state == CurrentState) return;
-        CurrentState = state;
-        OnStateChange.Invoke();
+
+        CurrentState = state; //Set the new state
+
+        OnStateChange.Invoke(); //Call event on state change
+
+        if (state == GameState.Paused)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
+
         Debug.Log("Set game state to " + state);
     }
 
@@ -76,13 +88,11 @@ public class GameManager : MonoBehaviour
 
     public void PauseGame()
     {
-        Time.timeScale = 0;
         SetState(GameState.Paused); 
     }
 
     public void ResumeGame()
     {
-        Time.timeScale = 1;
         SetState(GameState.Playing);
     }
 

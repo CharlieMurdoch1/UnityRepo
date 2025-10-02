@@ -1,0 +1,66 @@
+using UnityEngine;
+using UnityEngine.EventSystems;
+
+public class PlayerMovement : MonoBehaviour
+{
+    [SerializeField] private float _moveSpeed = 5f;
+    [SerializeField] private float _jumpHeight = 300f;
+
+    [SerializeField] private Rigidbody2D _rb;
+    [SerializeField] private SpriteRenderer _renderer;
+    [SerializeField] private Transform _groundCheck;
+    [SerializeField] private LayerMask _groundLayer;
+
+    private float _moveDirection;
+    private float _groundRadius = 0.3f;
+    private bool _isFacingRight = true;
+    private bool _isJumping;
+    private bool _isGrounded;
+
+    void Awake()
+    {
+        InputManager.instance.jumpEvent.AddListener(Jump);
+    }
+
+    private void Update()
+    {
+        GetInput();
+        UpdateAnimation();
+    }
+
+    private void FixedUpdate()
+    {
+        _isGrounded = Physics2D.OverlapCircle(_groundCheck.position, _groundRadius, _groundLayer);
+        ApplyMovement();
+    }
+
+    private void GetInput()
+    {
+        _moveDirection = Input.GetAxis("Horizontal");
+    }
+
+    private void UpdateAnimation()
+    {
+        // Flip sprite
+        if (_moveDirection != 0)
+        {
+            _isFacingRight = _moveDirection > 0;
+            _renderer.flipX = !_isFacingRight;
+        }
+    }
+
+    private void ApplyMovement()
+    {
+        _rb.linearVelocity = new Vector2(_moveDirection * _moveSpeed, _rb.linearVelocity.y);
+        if (_isJumping && _isGrounded)
+        {
+            _rb.AddForce(new Vector2(0f, _jumpHeight));
+        }
+        _isJumping = false;
+    }
+
+    private void Jump()
+    {
+        _isJumping = true;
+    }
+}
