@@ -57,4 +57,9 @@ public class LevelManager : MonoBehaviour
 
         _hudManager.UpdateHUD(); //Update the HUD display values
     }
+
+    public void OnDestroy()
+    {
+        activeInstance = null;
+    }
 }

@@ -19,7 +19,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Awake()
     {
-        InputManager.instance.jumpEvent.AddListener(Jump);
+        InputManager.instance.jumpEvent.AddListener(Jump); //Add the jump function to the jump input event
+    }
+
+    private void OnDestroy()
+    {
+        InputManager.instance.jumpEvent.RemoveListener(Jump); //Remove listener when the scene ends
     }
 
     private void Update()

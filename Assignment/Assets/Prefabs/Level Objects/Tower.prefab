@@ -408,7 +408,7 @@ GameObject:
   - component: {fileID: 3002348981561195848}
   - component: {fileID: 310040709356017116}
   - component: {fileID: 1270179297550235030}
-  - component: {fileID: 632935461844990466}
+  - component: {fileID: 1783013894791315415}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -501,7 +501,7 @@ MonoBehaviour:
   _displayText: {fileID: 3862615889252238865}
   _displayCanvas: {fileID: 6619059089449135741}
   _towerLevel: 0
---- !u!114 &632935461844990466
+--- !u!114 &1783013894791315415
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -510,13 +510,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4349420750704273468}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bf3b79d347c9c543b3ff076454c35e5, type: 3}
+  m_Script: {fileID: 11500000, guid: 85663275d089e6f41bae0bc9b4d4364c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  OnCollision:
+  OnInteract:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1270179297550235030}

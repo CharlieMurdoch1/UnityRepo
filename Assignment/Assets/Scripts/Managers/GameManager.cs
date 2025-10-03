@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
     private void BindObjects() //Creates instances of managers and binds them
     {
         _audioManager = Instantiate(_audioManager);
-        //_musicManager = Instantiate(_musicManager);
+        _musicManager = Instantiate(_musicManager);
         _inputManager = Instantiate(_inputManager);
         _uiManager = Instantiate(_uiManager);
     }

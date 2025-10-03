@@ -7,8 +7,11 @@ public class CollisionDetector : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        OnCollision.Invoke();
-        Debug.Log("Hit Player");
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            OnCollision.Invoke();
+            Debug.Log("Hit Player");
+        }
     }
 
     public UnityEvent OnCollision;
