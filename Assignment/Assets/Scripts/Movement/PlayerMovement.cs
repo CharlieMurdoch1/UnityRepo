@@ -1,3 +1,4 @@
+using NUnit.Framework.Constraints;
 using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -34,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
         GetInput();
         UpdateAnimation();
         PlayerRun();
+        PlayerJump();
     }
 
     private void FixedUpdate()
@@ -74,13 +76,25 @@ public class PlayerMovement : MonoBehaviour
 
     private void PlayerRun()
     {
-        if (_rb.linearVelocityX != 0.0f)
+        if (_rb.linearVelocityX != 0.0f && _isGrounded)
         {
             _animator.SetBool("isMoving", true);
         }
         else
         {
             _animator.SetBool("isMoving", false);
+        }
+    }
+
+    private void PlayerJump()
+    {
+        if (_isGrounded == false)
+        {
+            _animator.SetBool("isGrounded", _isGrounded);
+        }
+        else
+        {
+            _animator.SetBool("isGrounded", _isGrounded);
         }
     }
 }
