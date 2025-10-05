@@ -10,7 +10,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private HudManager _hudManager;
 
     [Header("Progress Stats")]
-    public int PiecesCollected {  get; private set; } = 0;
+    public int PiecesCollected { get; private set; } = 0;
     public int TotalTowers { get; private set; } = 0;
     public int CompletedTowers { get; private set; } = 0;
 
@@ -58,18 +58,18 @@ public class LevelManager : MonoBehaviour
 
         _hudManager.UpdateHUD(); //Update the HUD display values
 
-        if(CompletedTowers == TotalTowers) { LevelComplete(); } //If all towers have been built, the level is completed
-    }
-
-    private void LevelComplete()
-    {
-        GameManager.instance.ReturnToMenu();
-
-        Debug.Log("Level is complete");
+        GetPercent();
     }
 
     public void OnDestroy()
     {
         activeInstance = null;
+    }
+
+    public int GetPercent()
+    {
+        int _percentage = GetCompletedTowers() / TotalTowers;
+        Debug.Log("Percentage: " + _percentage.ToString());
+        return _percentage;
     }
 }
