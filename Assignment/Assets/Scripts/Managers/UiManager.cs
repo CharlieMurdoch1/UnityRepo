@@ -8,6 +8,7 @@ public class UiManager : MonoBehaviour
     [SerializeField] private GameObject _mainMenu;
     [SerializeField] private GameObject _pauseMenu;
 
+
     #region Initialization
     private void Awake()
     {

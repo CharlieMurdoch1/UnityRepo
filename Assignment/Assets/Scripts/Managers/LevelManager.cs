@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class LevelManager : MonoBehaviour
         InitializeLevel();
     }
 
-    private void InitializeLevel()
+    private void InitializeLevel() //Set up level-specific managers
     {
         _hudManager = Instantiate(_hudManager);
         _hudManager.UpdateHUD();
@@ -56,6 +57,15 @@ public class LevelManager : MonoBehaviour
         CompletedTowers = GetCompletedTowers(); //Update the number of towers completed by the player
 
         _hudManager.UpdateHUD(); //Update the HUD display values
+
+        if(CompletedTowers == TotalTowers) { LevelComplete(); } //If all towers have been built, the level is completed
+    }
+
+    private void LevelComplete()
+    {
+        GameManager.instance.ReturnToMenu();
+
+        Debug.Log("Level is complete");
     }
 
     public void OnDestroy()
