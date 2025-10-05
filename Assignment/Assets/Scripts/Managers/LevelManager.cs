@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class LevelManager : MonoBehaviour
         InitializeLevel();
     }
 
-    private void InitializeLevel()
+    private void InitializeLevel() //Set up level-specific managers
     {
         _hudManager = Instantiate(_hudManager);
         _hudManager.UpdateHUD();

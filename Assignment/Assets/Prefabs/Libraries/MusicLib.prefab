@@ -44,4 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c246546f55f5ee2439bf02d5cf7307c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tracks: []
+  tracks:
+  - trackName: Arcade
+    clip: {fileID: 8300000, guid: 1a9c7410dc52da845861bea674e4d516, type: 3}
+  - trackName: Pixel
+    clip: {fileID: 8300000, guid: c6e5606ca6350054ea7673841e80286a, type: 3}
+  - trackName: 
+    clip: {fileID: 0}
+  - trackName: 
+    clip: {fileID: 0}
+  - trackName: 
+    clip: {fileID: 0}
