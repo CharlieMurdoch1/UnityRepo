@@ -9,6 +9,8 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] private HudManager _hudManager;
 
+    [SerializeField] private string _nextLevelName;
+
     [Header("Progress Stats")]
     public int PiecesCollected { get; private set; } = 0;
     public int TotalTowers { get; private set; } = 0;
@@ -71,5 +73,25 @@ public class LevelManager : MonoBehaviour
         int _percentage = GetCompletedTowers() / TotalTowers;
         Debug.Log("Percentage: " + _percentage.ToString());
         return _percentage;
+    }
+
+    public void EndLevel()
+    {
+        if (GetCompletedTowers() == TotalTowers)
+        {
+            Debug.Log("Moving to next level");
+            if(_nextLevelName == "Main_Menu")
+            {
+                GameManager.instance.ReturnToMenu();
+                return;
+            }
+            SceneManager.LoadScene(_nextLevelName);
+        }
+        else
+        {
+            Debug.Log("Complete level first");
+        }
+
+
     }
 }
