@@ -95,6 +95,7 @@ public class LevelManager : MonoBehaviour
     public void TriggerWinCondition()
     {
         GameManager.instance.WinGame();
+        AudioManager.Instance.PlaySound("Win_Sound");
     }
 
     public void TriggerLoseCondition()

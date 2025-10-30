@@ -44,4 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c16c0bf23a6ac1d41b4c84a4ace14570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - soundName: Win_Sound
+    clip: {fileID: 8300000, guid: fb92714a731060a4a86c24dd443f2071, type: 3}
+  - soundName: Pickup_Sound
+    clip: {fileID: 8300000, guid: bfe6261a6ce17d044a34ce4f0f967657, type: 3}
+  - soundName: Click_Sound
+    clip: {fileID: 8300000, guid: e42d47a786ab680449be0bb587ecd11c, type: 3}

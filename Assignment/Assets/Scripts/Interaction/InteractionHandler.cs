@@ -34,6 +34,7 @@ public class InteractionHandler : MonoBehaviour
         if (CurrentFocus != null) 
         {
             CurrentFocus.OnInteract.Invoke();
+            AudioManager.Instance.PlaySound("Click_Sound");
         }
     }
 }

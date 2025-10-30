@@ -4,7 +4,7 @@ public class Collectable : MonoBehaviour
 {
     public void Collect()
     {
-        //AudioManager.Instance.PlaySound("collect_item");
+        AudioManager.Instance.PlaySound("Pickup_Sound");
         LevelManager.activeInstance.CollectPiece();
         Destroy(gameObject);
     }
