@@ -40,6 +40,12 @@ public class UiManager : MonoBehaviour
         _pauseMenu = Instantiate(_pauseMenu, _uiCanvas.transform);
         DontDestroyOnLoad(_pauseMenu.gameObject);
 
+        _winMenu = Instantiate(_winMenu, _uiCanvas.transform);
+        DontDestroyOnLoad(_winMenu.gameObject);
+
+        _loseMenu = Instantiate(_loseMenu, _uiCanvas.transform);
+        DontDestroyOnLoad(_loseMenu.gameObject);
+
         HandleStateChange(); //Call initially to open the main menu on game start.
     }
     #endregion
@@ -49,6 +55,8 @@ public class UiManager : MonoBehaviour
     {
         _mainMenu.SetActive(false);
         _pauseMenu.SetActive(false);
+        _loseMenu.SetActive(false);
+        _winMenu.SetActive(false);
 
         switch (GameManager.instance.CurrentState)
         {
@@ -60,20 +68,16 @@ public class UiManager : MonoBehaviour
                 _pauseMenu.SetActive(true);
                 break;
 
-            case GameState.Playing:
-                
+            case GameState.Win:
+                _winMenu.SetActive(true);
+                break;
+
+            case GameState.Lose:
+                _loseMenu.SetActive(true);
                 break;
         }
     }
     #endregion
 
-    public void OpenWinMenu()
-    {
-
-    }
-
-    public void OpenLoseMenu()
-    {
-
-    }
+    
 }

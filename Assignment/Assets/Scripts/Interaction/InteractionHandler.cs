@@ -23,7 +23,10 @@ public class InteractionHandler : MonoBehaviour
     public void ClearFocus() //Triggered by interactable on collision exit
     {
         CurrentFocus = null;
-        HudManager.activeInstance.DisableTooltip();
+        if (HudManager.activeInstance != null)
+        {
+            HudManager.activeInstance.DisableTooltip();
+        }
     }
 
     public void InteractWithCurrentFocus() //Triggered by InputManager when iteractionInputEvent is called

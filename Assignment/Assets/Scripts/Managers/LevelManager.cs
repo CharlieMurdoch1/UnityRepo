@@ -26,6 +26,7 @@ public class LevelManager : MonoBehaviour
     {
         _hudManager = Instantiate(_hudManager);
         _hudManager.UpdateHUD();
+        GameManager.instance.SetState(GameState.Playing);
     }
 
     public void CollectPiece() //Called when the player collects a new tower piece
@@ -60,10 +61,15 @@ public class LevelManager : MonoBehaviour
 
         _hudManager.UpdateHUD(); //Update the HUD display values
 
+        if (GetCompletedTowers() == TotalTowers) //If all towers are complete, win level
+        {
+            TriggerWinCondition();
+        }
+
         GetPercent();
     }
 
-    public void OnDestroy()
+    public void OnDestroy() //Clean up instance on level unload
     {
         activeInstance = null;
     }
@@ -77,21 +83,22 @@ public class LevelManager : MonoBehaviour
 
     public void EndLevel()
     {
-        if (GetCompletedTowers() == TotalTowers)
+        Debug.Log("Moving to next level");
+        if (_nextLevelName == "Main_Menu")
         {
-            Debug.Log("Moving to next level");
-            if(_nextLevelName == "Main_Menu")
-            {
-                GameManager.instance.ReturnToMenu();
-                return;
-            }
-            SceneManager.LoadScene(_nextLevelName);
+            GameManager.instance.ReturnToMenu();
+            return;
         }
-        else
-        {
-            Debug.Log("Complete level first");
-        }
+        SceneManager.LoadScene(_nextLevelName);
+    }
 
+    public void TriggerWinCondition()
+    {
+        GameManager.instance.WinGame();
+    }
 
+    public void TriggerLoseCondition()
+    {
+        GameManager.instance.LoseGame();
     }
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Events;
 
-public enum GameState { MainMenu, Playing, Paused}
+public enum GameState { MainMenu, Playing, Paused, Win, Lose}
 
 public class GameManager : MonoBehaviour
 {
@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region State Management
-    private void SetState(GameState state) //Changes game state
+    public void SetState(GameState state) //Changes game state
     {
         if (state == CurrentState) return;
 
@@ -94,6 +94,16 @@ public class GameManager : MonoBehaviour
     public void ResumeGame()
     {
         SetState(GameState.Playing);
+    }
+
+    public void LoseGame()
+    {
+        SetState(GameState.Lose); 
+    }
+
+    public void WinGame()
+    {
+        SetState(GameState.Win); 
     }
 
     #endregion

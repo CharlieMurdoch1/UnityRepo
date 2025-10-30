@@ -47,3 +47,5 @@ MonoBehaviour:
   _uiCanvas: {fileID: 1262584975907774761, guid: 3d2b655206d34d544a4949128d6f63e4, type: 3}
   _mainMenu: {fileID: 6544710279530885168, guid: 836118f1e6b29734bbf0b5831c0e28dc, type: 3}
   _pauseMenu: {fileID: 629533711407016599, guid: 03f982676306dea469fde8fddb039d1d, type: 3}
+  _winMenu: {fileID: 629533711407016599, guid: f87e1ad4cf0a9244792ff3c3233c42ca, type: 3}
+  _loseMenu: {fileID: 629533711407016599, guid: 497a0223501c01440bac06b2e40b9753, type: 3}
