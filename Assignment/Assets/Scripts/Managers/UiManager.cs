@@ -7,6 +7,8 @@ public class UiManager : MonoBehaviour
     [SerializeField] private GameObject _uiCanvas;
     [SerializeField] private GameObject _mainMenu;
     [SerializeField] private GameObject _pauseMenu;
+    [SerializeField] private GameObject _winMenu;
+    [SerializeField] private GameObject _loseMenu;
 
 
     #region Initialization
@@ -64,4 +66,14 @@ public class UiManager : MonoBehaviour
         }
     }
     #endregion
+
+    public void OpenWinMenu()
+    {
+
+    }
+
+    public void OpenLoseMenu()
+    {
+
+    }
 }
