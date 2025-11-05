@@ -10,7 +10,7 @@ public class SettingsUI : MonoBehaviour
     [SerializeField] private Slider MusicSlider;
     [SerializeField] private Slider SfxSlider;
 
-    private void OnEnable()
+    private void Start()
     {
         //Load saved values from the SettingsHandler and set slider values.
         SettingsHandler.LoadPrefs();

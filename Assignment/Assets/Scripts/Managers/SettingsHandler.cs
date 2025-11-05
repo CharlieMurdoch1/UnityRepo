@@ -11,7 +11,6 @@ public static class SettingsHandler
     //Save current values to player prefs
     public static void SavePrefs()
     {
-        PlayerPrefs.SetFloat("MouseSensitivity", MouseSensitivity);
         PlayerPrefs.SetFloat("MasterVol", MasterVol);
         PlayerPrefs.SetFloat("SfxVol", SfxVol);
         PlayerPrefs.SetFloat("MusicVol", MusicVol);
@@ -20,7 +19,6 @@ public static class SettingsHandler
     //Load values from player prefs;
     public static void LoadPrefs()
     {
-        MouseSensitivity = PlayerPrefs.GetFloat("MouseSensitivity", 200f);
         MasterVol = PlayerPrefs.GetFloat("MasterVol", 0f);
         SfxVol = PlayerPrefs.GetFloat("SfxVol", 0f);
         MusicVol = PlayerPrefs.GetFloat("MusicVol", 0f);
