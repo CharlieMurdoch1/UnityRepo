@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _towers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1270179297550235030, guid: 4b5feb1cd6b54044ab39e35e36c82026, type: 3}
+  - {fileID: 1270179297550235030, guid: 4b5feb1cd6b54044ab39e35e36c82026, type: 3}
+  - {fileID: 1270179297550235030, guid: 4b5feb1cd6b54044ab39e35e36c82026, type: 3}
   _hudManager: {fileID: 6756528071442615046, guid: d03a1a6e4700899439274e95097e6442, type: 3}
   _nextLevelName: Level_02
