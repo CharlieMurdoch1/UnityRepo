@@ -4,7 +4,7 @@ public class MenuCamControl : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public Transform _currentMount;
-    public float _speed = 0.1f;
+    public float _speed = 5f;
 
     public void setMount(Transform newMount)
     {
