@@ -5,7 +5,7 @@ public class UiManager : MonoBehaviour
     public static UiManager instance;
 
     [SerializeField] private GameObject _uiCanvas;
-    [SerializeField] private GameObject _mainMenu;
+    //[SerializeField] private GameObject _mainMenu;
     [SerializeField] private GameObject _pauseMenu;
     [SerializeField] private GameObject _winMenu;
     [SerializeField] private GameObject _loseMenu;
@@ -34,8 +34,8 @@ public class UiManager : MonoBehaviour
         _uiCanvas = Instantiate(_uiCanvas.gameObject);
         DontDestroyOnLoad(_uiCanvas);
 
-        _mainMenu = Instantiate(_mainMenu, _uiCanvas.transform);
-        DontDestroyOnLoad(_mainMenu.gameObject);
+        //_mainMenu = Instantiate(_mainMenu, _uiCanvas.transform);
+        //DontDestroyOnLoad(_mainMenu.gameObject);
 
         _pauseMenu = Instantiate(_pauseMenu, _uiCanvas.transform);
         DontDestroyOnLoad(_pauseMenu.gameObject);
@@ -53,7 +53,7 @@ public class UiManager : MonoBehaviour
     #region State Management
     private void HandleStateChange()
     {
-        _mainMenu.SetActive(false);
+        //_mainMenu.SetActive(false);
         _pauseMenu.SetActive(false);
         _loseMenu.SetActive(false);
         _winMenu.SetActive(false);
@@ -61,7 +61,7 @@ public class UiManager : MonoBehaviour
         switch (GameManager.instance.CurrentState)
         {
             case GameState.MainMenu:
-                _mainMenu.SetActive(true);
+                //_mainMenu.SetActive(true);
                 break;
 
             case GameState.Paused:

@@ -625,7 +625,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1053455296}
+        m_TargetAssemblyTypeName: SettingsUI, Assembly-CSharp
+        m_MethodName: ChangeMasterVol
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &107451201
 GameObject:
   m_ObjectHideFlags: 0
@@ -1504,7 +1516,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1053455296}
+        m_TargetAssemblyTypeName: SettingsUI, Assembly-CSharp
+        m_MethodName: ChangeSfxVol
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &488178906
 GameObject:
   m_ObjectHideFlags: 0
@@ -1905,7 +1929,7 @@ GameObject:
   - component: {fileID: 556768928}
   - component: {fileID: 556768927}
   m_Layer: 5
-  m_Name: btnSettings
+  m_Name: btnBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1982,6 +2006,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 608906738}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1053455296}
+        m_TargetAssemblyTypeName: SettingsUI, Assembly-CSharp
+        m_MethodName: ApplySettingsChanges
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2855,9 +2891,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 799872186}
-        m_TargetAssemblyTypeName: StartGame, Assembly-CSharp
-        m_MethodName: startGame
+      - m_Target: {fileID: 1878734068}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: StartNewGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3133,6 +3169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1053455294}
   - component: {fileID: 1053455295}
+  - component: {fileID: 1053455296}
   m_Layer: 0
   m_Name: SettingsMenu
   m_TagString: Untagged
@@ -3169,6 +3206,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7176a66d47889ba4cbca9a3827764047, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1053455296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053455293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5633c1299048fd24f9713ee782f815f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MasterSlider: {fileID: 104125954}
+  MusicSlider: {fileID: 1836680189}
+  SfxSlider: {fileID: 440969288}
 --- !u!1 &1124880465
 GameObject:
   m_ObjectHideFlags: 0
@@ -4141,6 +4193,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1407413578}
   m_CullTransparentMesh: 1
+--- !u!1001 &1420928794
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1878312211275810413, guid: b6010788b19a25149af7ea2ca1a9045d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 960
+      objectReference: {fileID: 0}
+    - target: {fileID: 1878312211275810413, guid: b6010788b19a25149af7ea2ca1a9045d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 540
+      objectReference: {fileID: 0}
+    - target: {fileID: 1878312211275810413, guid: b6010788b19a25149af7ea2ca1a9045d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1878312211275810413, guid: b6010788b19a25149af7ea2ca1a9045d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1878312211275810413, guid: b6010788b19a25149af7ea2ca1a9045d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1878312211275810413, guid: b6010788b19a25149af7ea2ca1a9045d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1878312211275810413, guid: b6010788b19a25149af7ea2ca1a9045d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1878312211275810413, guid: b6010788b19a25149af7ea2ca1a9045d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1878312211275810413, guid: b6010788b19a25149af7ea2ca1a9045d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1878312211275810413, guid: b6010788b19a25149af7ea2ca1a9045d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071289695334247167, guid: b6010788b19a25149af7ea2ca1a9045d, type: 3}
+      propertyPath: m_Name
+      value: GameManager (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b6010788b19a25149af7ea2ca1a9045d, type: 3}
 --- !u!1 &1425487308
 GameObject:
   m_ObjectHideFlags: 0
@@ -5140,7 +5249,30 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1053455296}
+        m_TargetAssemblyTypeName: SettingsUI, Assembly-CSharp
+        m_MethodName: ChangeMusicVol
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1878734068 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5408849081851758810, guid: b6010788b19a25149af7ea2ca1a9045d, type: 3}
+  m_PrefabInstance: {fileID: 1420928794}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86efe20b935410e4985ccefd47096586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1888874956
 GameObject:
   m_ObjectHideFlags: 0
@@ -6359,3 +6491,4 @@ SceneRoots:
   - {fileID: 799872185}
   - {fileID: 65189084}
   - {fileID: 1026934549}
+  - {fileID: 1420928794}
