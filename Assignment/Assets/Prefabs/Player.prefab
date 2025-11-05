@@ -88,6 +88,7 @@ MonoBehaviour:
   _groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  _animator: {fileID: 0}
 --- !u!212 &539238171546127047
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -131,7 +132,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 50
   m_Sprite: {fileID: 1020342192101782027, guid: 8c8b24db0eea61646aff82874b70b9be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
